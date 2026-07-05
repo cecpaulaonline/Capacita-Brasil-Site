@@ -567,7 +567,7 @@ table.grades td{padding:10px;border-bottom:1px solid var(--line);color:var(--nav
           <h3>Certificados</h3>
           <div class="cert-option">
             <h4>Solicitar certificado — <span id="cert-curso-atual">curso selecionado</span></h4>
-            <p>Você precisa ter concluído todas as aulas (nota mínima 6 em pelo menos um exercício de cada uma) e o pagamento precisa constar como confirmado em nossa planilha.</p>
+            <p>Você precisa ter concluído todas as aulas (nota mínima 6 no exercício de cada uma) e o pagamento precisa constar como confirmado em nossa planilha.</p>
             <button class="btn btn-primary" id="btn-cert-solicitar" onclick="Cert.solicitar()">Solicitar certificado</button>
             <div class="form-msg" id="cert-req-msg"></div>
           </div>
@@ -640,10 +640,8 @@ function makeAulas(nomes){
     // TODO: troque pelo link real da pasta/arquivo no Google Drive
     pdf:'https://drive.google.com/drive/folders/COLOQUE_O_LINK_AQUI_AULA_'+(i+1),
     exercicios:[
-      // TODO: troque pelo link real de cada Google Forms
-      {numero:1, nome:'Exercício 01', formLink:'https://forms.gle/COLOQUE_O_LINK_AQUI'},
-      {numero:2, nome:'Exercício 02', formLink:'https://forms.gle/COLOQUE_O_LINK_AQUI'},
-      {numero:3, nome:'Exercício 03', formLink:'https://forms.gle/COLOQUE_O_LINK_AQUI'}
+      // TODO: troque pelo link real do Google Forms desta aula
+      {numero:1, nome:'Exercício avaliativo', formLink:'https://forms.gle/COLOQUE_O_LINK_AQUI'}
     ]
   }));
 }
@@ -736,7 +734,7 @@ function courseByNome(nome){ return COURSES.find(c=>c.nome.trim().toLowerCase()=
    Troque API_URL se você reimplantar (redeploy) o Apps Script e a URL mudar.
    ========================================================================= */
 const CONFIG = {
-  API_URL: 'https://script.google.com/macros/s/AKfycbzcYGIRb2c4rBhj4qspCP7unqseKr2SLlRX5rvg39jUUjMBj_UIXJpB3Hrq11Hobjmx/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbx5pH3t9p-mE6ptA4TSbOpHKbJyICPpng4oBdPkC6cUS2_f4eLsFUXsppixJXMBOm5f/exec',
   TOTAL_AULAS: 8,
   WHATSAPP_NUMERO: '5584987620081'
 };
