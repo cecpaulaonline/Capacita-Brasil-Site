@@ -705,6 +705,29 @@ const COURSES = [
   }
 ];
 
+/* -------------------------------------------------------------------------
+   DADOS REAIS DE TESTE — curso Almoxarifado (Aulas 1 a 6)
+   Ainda faltam: PDFs (Drive), Exercícios 2 e 3 de cada aula, e Aulas 7-8.
+   Para atualizar depois, edite os valores abaixo.
+   ------------------------------------------------------------------------- */
+(function aplicarDadosReaisAlmoxarifado(){
+  const curso = COURSES.find(c => c.id === 'almoxarifado');
+  const dados = [
+    {videoId:'Mu-3vb_mYvE', exercicio1:'https://docs.google.com/forms/d/e/1FAIpQLSdjaL079b6A9VzhJzqq5RNFL3DvhOaoj03OOsUBLjc1ky0cvQ/viewform'},
+    {videoId:'5s_E2hrcarA', exercicio1:'https://docs.google.com/forms/d/e/1FAIpQLSe7S1S1AWwMYC2b4dULJug1t2ZnB39mH6IXheva9ff5Dc-4WA/viewform'},
+    {videoId:'IklHskcLMO8', exercicio1:'https://docs.google.com/forms/d/e/1FAIpQLSde9xfrzr0-dUTSXiKfIyGHdHHI7ENfSNSlQ2NlUESIhEVAOA/viewform'},
+    {videoId:'aavdhTvI03Q', exercicio1:'https://docs.google.com/forms/d/e/1FAIpQLScePV2ExxCg8poZ6-nIuhqi38MQGbH87AshZP7hMUqRd0ZSCw/viewform'},
+    {videoId:'aavdhTvI03Q', exercicio1:'https://docs.google.com/forms/d/e/1FAIpQLScjAJYiJ5U1oT5ZBYFjWJkXKVLg99YyNooucZsmPxfsGbgr1w/viewform'},
+    {videoId:'2tNWrzyLvzY', exercicio1:'https://docs.google.com/forms/d/e/1FAIpQLSf5YWXdz7xAdW7B72Cbp8LEsKIJnv20TQXEnWhvt21v4Htusg/viewform'}
+  ];
+  dados.forEach((d, i) => {
+    const aula = curso.aulas[i];
+    if(!aula) return;
+    aula.videoId = d.videoId;
+    aula.exercicios[0].formLink = d.exercicio1;
+  });
+})();
+
 function courseById(id){ return COURSES.find(c=>c.id===id); }
 function courseByNome(nome){ return COURSES.find(c=>c.nome.trim().toLowerCase()===(nome||'').trim().toLowerCase()); }
 
